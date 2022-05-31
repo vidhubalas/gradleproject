@@ -9,6 +9,7 @@ import static org.junit.Assert.*;
 public class EmployeeTest {
     @Test public void appHasAGreeting() {
         Employee classUnderTest = new Employee();
+        System.out.println("Employee appHasAGreeting.....");
         assertNotNull("Hello Employee!", classUnderTest.getGreeting());
     }
 }
