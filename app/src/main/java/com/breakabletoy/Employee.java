@@ -5,7 +5,8 @@ package com.breakabletoy;
 
 public class Employee {
     public String getGreeting() {
-        return "Hello Employee!";
+//        return "Hello Employee!";
+        return null;
     }
 
     public static void main(String[] args) {
