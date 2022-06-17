@@ -5,15 +5,11 @@
  * For more details take a look at the 'Building Java & JVM projects' chapter in the Gradle
  * User Manual available at https://docs.gradle.org/7.4.1/userguide/building_java_projects.html
  */
-
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
 }
-jar {
-    archiveBaseName = 'gs-gradle'
-    archiveVersion =  '0.1.0'
-}
+
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
@@ -31,6 +27,11 @@ dependencies {
 }
 test {
     useJUnitPlatform()
+
+    testLogging {
+        events "passed","skipped","failed"
+    }
+    testLogging.showStandardStreams = true
 }
 /*application {
     // Define the main class for the application.
@@ -50,6 +51,8 @@ sourceSets {
         }
     }
 }
+/*
 task testSuite(type: Test) {
     include 'JunitTestSuite.class'
-}
+    testLogging.showStandardStreams = true
+}*/
